@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Is Even? Test</title>
+    <style>
+        body{ 
+            font-family: sans-serif; 
+            background: #000000; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            margin: 0; 
+        }
+        .check-box{ 
+            background: rgba(23, 24, 22, 0.995); 
+            padding: 30px; 
+            border-radius: 50%; 
+            width: 300px; 
+            height: 300px; 
+            display: flex; 
+            flex-direction: column; 
+            color: antiquewhite;
+            font-size: 40px;
+            font-family:'Times New Roman', Times, serif;
+            justify-content: center; 
+            align-items: center; 
+            box-shadow: 0 1px 1000px rgba(255, 255, 255, 255); 
+        }
+        input{ 
+            width: 150px; 
+            height: 50px;
+            text-align: center; 
+            font-size: 1.2rem; 
+            border: none; 
+            border-bottom: 2px solid #673ab7; 
+            margin-bottom: 10px; 
+            outline: none; 
+        }
+    </style>
+</head>
+<body>
+    <div class="check-box">
+        <input type="number" id="numTest" placeholder="0" oninput="runCheck()">
+        <b id="evenRes">Enter a number</b>
+    </div>
+    <script>
+        const isEven = (num) => num % 2 === 0;
+        function runCheck() {
+            const n = document.getElementById('numTest').value;
+            if(n === "") { document.getElementById('evenRes').innerText = "Enter a number"; return; }
+            document.getElementById('evenRes').innerText = isEven(parseInt(n)) ? "TRUE" : "FALSE";
+        }
+    </script>
+</body>
+</html>
